@@ -19,7 +19,7 @@ function PropertyCard({ listing, onClick, User, isTenant }) {
       onClick={onClick}
     >
       <img
-        src={(listing.images_urls[0]) || "/images/fallback.jpg"}
+        src={(listing.images_urls[0]) || `/images/${listing.property_types}.jpg` || "/images/fallback.jpg"}
         alt={`${listing.property_types?.toLowerCase().trim()} property photo`}
         onError={(e) => {
           e.target.onerror = null;
