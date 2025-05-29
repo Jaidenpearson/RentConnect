@@ -6,11 +6,11 @@ function ApplyButton({ propertyId, User }) {
   const navigate = useNavigate();
 
   // ✅ Use prop if available, otherwise fallback to localStorage
-  const userId = User.id || localStorage.getItem("user").id;
+  const userId = JSON.parse(localStorage.getItem("user")).id;
 
   const handleApply = () => {
     console.log("✅ handleApply triggered for property:", propertyId);
-    console.log("🔐 userId being passed:", User.id);
+    console.log("🔐 userId being passed:", userId);
 
     if (!userId) {
       alert("No user ID found. Please log in.");

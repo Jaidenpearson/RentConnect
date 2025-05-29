@@ -36,7 +36,7 @@ function LeafletMapContainer({ listings, geoLocation, onMarkerClick }) {
                                     onClick={() => {
                                         onMarkerClick(listing.id)}}
                                     cursor="pointer"
-                                    src={getImageURL(listing.property_types)}
+                                    src={`Frontend/public/images/${listing.property_types}`}
                                     alt={listing.title}
                                     style={{ width: "100px", height: "100px" }}
                                 />

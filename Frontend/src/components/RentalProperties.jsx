@@ -22,6 +22,8 @@ const RentalProperties = ({ User }) => {
   const [error, setError] = useState(null);
   const [distance, setDistance] = useState(1200)  
 
+  const navigate = useNavigate()
+
   const propertyRefs = useRef({});
   console.log('propertyRefs', propertyRefs)
 
@@ -40,6 +42,8 @@ const RentalProperties = ({ User }) => {
       console.error("Failed to fetch rental properties:", error);
     }
   };
+
+  const navigateToProperty = (propertyId) => navigate(`rentalProperty/${propertyId}`)
 
   useEffect(() => {
     getProperties();
@@ -204,7 +208,7 @@ const RentalProperties = ({ User }) => {
                 listing.longitude
               ) <= distance
             ) {
-              const handleClick = () => navigateToProperty('/property/' + listing.id);
+              const handleClick = () => navigateToProperty(listing.id);
               const handleApplyClick = () => handleApply(listing.id);
 
               return (

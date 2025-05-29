@@ -5,7 +5,7 @@ const BASE_URL = 'http://localhost:3001';
 const rental_property_endpoints = {
   GET_RENTAL_PROPERTIES: `${BASE_URL}/rental_properties`,
   GET_RENTAL_PROPERTY_BY_ID: `${BASE_URL}/rental_properties`,
-  // GET_RENTAL_PROPERTY: `${BASE_URL}/rental_property/:id`,
+  GET_RENTAL_PROPERTY: `${BASE_URL}/rental_properties/`,
   CREATE_RENTAL_PROPERTY: `${BASE_URL}/rental_properties`,
   // EDIT_RENTAL_PROPERTY: `${BASE_URL}/rental_property/:id/edit`,
   // DELETE_RENTAL_PROPERTY: `${BASE_URL}/rental_property/:id`,
@@ -28,10 +28,10 @@ export const fetchPropertiesByUser = async (userId) => {
   }
 }
 
-// export const get_rental_property = async (id) => {
-//   const response = await axios.get(rental_property_endpoints.GET_RENTAL_PROPERTY(id));
-//   return response.data;
-// };
+export const get_rental_property = async (id) => {
+  const response = await axios.get(`${BASE_URL}/rental_properties/${id}`);
+  return response.data;
+};
 
 export const create_rental_property = async (propertyData) => {
   const response = await axios.post(rental_property_endpoints.CREATE_RENTAL_PROPERTY, propertyData);

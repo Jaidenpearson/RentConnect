@@ -14,6 +14,7 @@ import MyProperties from "./components/MyProperties";
 import TenantProfilePage from "./components/TenantDashboard/TenantProfilePage";
 import LandlordApplications from "./components/TenantDashboard/LandlordApplications";
 import LandlordApplicationDetails from "./components/TenantDashboard/LandlordApplicationsDetails";
+import PropertyPage from "./components/PropertyPage"
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -57,6 +58,7 @@ function App() {
         <Route path="application/:id" element={<LandlordApplicationDetails />} />
         <Route path="account-settings" element={<div>Account Settings</div>} />
         <Route index element={<div>Welcome to your dashboard!</div>} />
+        <Route path="view-properties/rentalProperty/:id" element={<PropertyPage /> }/>
       </Route>
 
       {/* Sign Up route (outside dashboard layout) */}
